@@ -170,11 +170,14 @@ export const AdminLiveToolbar: React.FC = () => {
     }
   };
 
+  if (!user) {
+    return null;
+  }
+
   return (
     <>
       {/* WordPress / Gutenberg Top Admin Bar */}
-      {(user || isLiveEditMode) && (
-        <div className="bg-[#1E1C1A] text-white text-xs border-b border-white/10 sticky top-0 z-50">
+      <div className="bg-[#1E1C1A] text-white text-xs border-b border-white/10 sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-11 flex items-center justify-between gap-3 overflow-x-auto">
             <div className="flex items-center gap-3 shrink-0">
               <Link
@@ -252,7 +255,6 @@ export const AdminLiveToolbar: React.FC = () => {
             </div>
           </div>
         </div>
-      )}
 
       {/* Floating Bottom-Left Button to Activate Gutenberg Mode anytime */}
       {!isLiveEditMode && (

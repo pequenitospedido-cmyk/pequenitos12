@@ -186,9 +186,9 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#6E685F]">
+          <div className="pt-8 flex flex-col items-center justify-center gap-3 text-xs text-[#6E685F] text-center">
             <p>© 2026 {siteSettings.siteName || 'Pequeñitos'}. Todos los derechos reservados.</p>
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-4">
               <p>
                 Atención por {siteSettings.contactPerson || 'Milena Vargas'} · WhatsApp{' '}
                 {siteSettings.whatsappNumber} · Colombia
@@ -201,6 +201,9 @@ export const Footer: React.FC = () => {
                 <Lock className="w-3 h-3" />
               </Link>
             </div>
+            <p className="text-[10px] text-[#6E685F]/70 mt-1">
+              Desarrollado por <a href="https://aimatika.com" target="_blank" rel="noreferrer" className="hover:text-[#4FA6EE] transition-colors font-medium">aimatika</a>
+            </p>
           </div>
         </div>
       </footer>
