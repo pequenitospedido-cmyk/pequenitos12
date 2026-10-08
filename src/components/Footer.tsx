@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BrandLogo } from './BrandLogo';
 import { useStore } from '../context/StoreContext';
-import { X } from 'lucide-react';
+import { X, Lock } from 'lucide-react';
 
 type InfoModalType = 'envios' | 'cambios' | 'faq' | null;
 
@@ -195,9 +195,10 @@ export const Footer: React.FC = () => {
               </p>
               <Link
                 to="/admin"
-                className="text-[#6E685F]/70 hover:text-[#4FA6EE] underline transition-colors"
+                className="text-[#6E685F]/70 hover:text-[#4FA6EE] transition-colors"
+                title="Acceso Seguro"
               >
-                Administrar tienda (CMS)
+                <Lock className="w-3 h-3" />
               </Link>
             </div>
           </div>

@@ -20,6 +20,13 @@ export const AdminLoginPage: React.FC = () => {
   const handleSupabaseLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMsg('');
+    
+    // Verificación estricta de seguridad solicitada
+    if (email.trim() !== 'pequenitospedido@gmail.com' || password !== 'JyhHR623BJB8354:_*hy334gd') {
+      setErrorMsg('Acceso denegado. Credenciales incorrectas o no autorizadas.');
+      return;
+    }
+
     setSubmitting(true);
     try {
       const res = await signInWithSupabase(email, password);
@@ -34,7 +41,11 @@ export const AdminLoginPage: React.FC = () => {
   };
 
   const handleEnterDemo = () => {
-    enterDemoSession(email || 'pequenitospedido@gmail.com');
+    if (email.trim() !== 'pequenitospedido@gmail.com' || password !== 'JyhHR623BJB8354:_*hy334gd') {
+      setErrorMsg('Acceso denegado. Se requiere el correo y contraseña exactos incluso en modo DEMO.');
+      return;
+    }
+    enterDemoSession(email.trim());
     navigate('/admin');
   };
 
@@ -141,11 +152,10 @@ export const AdminLoginPage: React.FC = () => {
                 className="w-full py-3.5 px-5 rounded-full bg-[#2D2A26] text-white text-xs sm:text-sm font-semibold hover:bg-[#3F3B36] transition-colors inline-flex items-center justify-center gap-2 cursor-pointer shadow-xs"
               >
                 <Sparkles className="w-4 h-4 text-[#FACC48]" />
-                <span>Entrar al Administrador (Modo DEMO)</span>
+                <span>Entrar al Administrador (Modo Seguro)</span>
               </button>
               <p className="text-[11px] text-[#6E685F] text-center leading-relaxed">
-                Sin contraseñas hardcodeadas. Cuando agregues tus claves de Supabase en Netlify o{' '}
-                <code>.env</code>, este acceso requerirá autenticación real mediante Supabase Auth.
+                Modo seguro activado. Ingresa el correo y la contraseña asignados para entrar.
               </p>
             </div>
           )}
