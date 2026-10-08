@@ -66,30 +66,7 @@ export const AdminLoginPage: React.FC = () => {
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-6 shadow-xs rounded-3xl border border-black/6 sm:px-10 space-y-6">
-          {/* Status Indicator */}
-          <div
-            className={`p-3.5 rounded-2xl text-xs flex items-start gap-2.5 ${
-              isConfigured
-                ? 'bg-[#ECF9F4] text-[#2D2A26] border border-[#53C59B]/30'
-                : 'bg-[#EBF5FD] text-[#2D2A26] border border-[#4FA6EE]/25'
-            }`}
-          >
-            <Database className="w-4 h-4 text-[#4FA6EE] shrink-0 mt-0.5" />
-            <div>
-              {isConfigured ? (
-                <span>
-                  <strong>Supabase Conectado:</strong> Inicia sesión con las credenciales de tu
-                  cuenta en Supabase Auth.
-                </span>
-              ) : (
-                <span>
-                  <strong>Modo DEMO Activo:</strong> Las variables{' '}
-                  <code className="font-mono text-[11px]">VITE_SUPABASE_URL</code> aún no están
-                  configuradas. Puedes entrar directamente al CMS en modo DEMO interactivo.
-                </span>
-              )}
-            </div>
-          </div>
+
 
           {errorMsg && (
             <div className="p-3.5 rounded-2xl bg-[#FEF1EF] border border-[#F48B7B]/30 text-xs text-[#2D2A26]">
