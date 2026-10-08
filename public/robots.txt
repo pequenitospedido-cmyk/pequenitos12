@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /carrito
+Disallow: /checkout
+
+Sitemap: https://pequenitos.co/sitemap.xml

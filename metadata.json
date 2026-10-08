@@ -1,0 +1,6 @@
+{
+  "name": "Pequeñitos — Ropa para Bebés y Niños en Colombia",
+  "description": "Ropita para pequeños momentos grandes. Tienda online de mamelucos, conjuntos, camisetas y regalos para bebés y niños con envíos a toda Colombia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

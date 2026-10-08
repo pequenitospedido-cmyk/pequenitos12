@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Pequeñitos Pastel Brand Palette (inspired by the official logo) */
+    --brand-blue: #4FA6EE;
+    --brand-blue-soft: #EBF5FD;
+    --brand-coral: #F48B7B;
+    --brand-coral-soft: #FEF1EF;
+    --brand-mint: #53C59B;
+    --brand-mint-soft: #ECF9F4;
+    --brand-yellow: #FACC48;
+    --brand-yellow-soft: #FEF9E7;
+    --brand-cream: #FDFBF7;
+    --brand-surface: #F7F3EC;
+    --brand-text: #2D2A26;
+    --brand-muted: #6E685F;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--brand-text);
+    background-color: var(--brand-cream);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes cartBounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.16);
+  }
+}
+
+.animate-cart-bounce {
+  animation: cartBounce 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
